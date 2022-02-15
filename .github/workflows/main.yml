@@ -37,3 +37,6 @@ jobs:
         with:
           name: jmeter-results
           path: result.jtl
+          
+  build2:
+    name: test job
