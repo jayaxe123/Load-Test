@@ -38,5 +38,5 @@ jobs:
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:
-          name: jmeter-results_$(date +'%Y-%m-%dT%H:%M:%S')
+          name: jmeter-results_${{ NOW }}
           path: result.jtl
