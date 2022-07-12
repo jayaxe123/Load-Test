@@ -32,8 +32,11 @@ jobs:
           # jmeter test plan to execute
           test-plan-path: './Customer_Lookup_Master_v1.jmx'
           
+      - name: Set current date as env variable
+        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+          
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:
-          name: jmeter-results_"${{ steps.date.outputs.date }}"
+          name: jmeter-results_$NOW
           path: result.jtl
