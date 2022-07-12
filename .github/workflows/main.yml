@@ -33,7 +33,7 @@ jobs:
           test-plan-path: './Customer_Lookup_Master_v1.jmx'
           
       - name: Set current date as env variable
-        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')"
           
       - name: Upload Results
         uses: actions/upload-artifact@v2
