@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-results_$(date +'%Y-%m-%dT%H:%M:%S')
-          path: result_$NOW.jtl
+          path: result.jtl
