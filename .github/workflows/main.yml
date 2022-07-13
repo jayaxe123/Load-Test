@@ -4,9 +4,9 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  #schedule:
+  schedule:
     # Runs "at minute 55 past every hour" (see https://crontab.guru)
-    #- cron: '*/10 * * * *'
+    - cron: '0 14 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,5 +44,5 @@ jobs:
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:
-          name: jmeter-results_${{ steps.date.outputs.date }}
+          name: Customer_Lookup_Master_v1_results_${{ steps.date.outputs.date }}
           path: result.jtl
