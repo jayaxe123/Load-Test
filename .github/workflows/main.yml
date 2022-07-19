@@ -6,7 +6,7 @@ name: CI
 on:
   schedule:
     # Runs "at minute 55 past every hour" (see https://crontab.guru)
-    - cron: '*/7 * * * *'
+    - cron: '0 10 * * *'
     #- cron: '*/11 * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
