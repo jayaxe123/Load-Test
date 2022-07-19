@@ -7,7 +7,7 @@ on:
   schedule:
     # Runs "at minute 55 past every hour" (see https://crontab.guru)
     - cron: '*/7 * * * *'
-    - cron: '*/11 * * * *'
+    #- cron: '*/11 * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: PerfAction for JMeter
-        if: github.event.schedule != '*/11 * * * *'
+        #if: github.event.schedule != '*/11 * * * *'
         # You may pin to the exact commit or the version.
         # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
         uses: QAInsights/PerfAction@2.0
@@ -35,18 +35,18 @@ jobs:
           test-plan-path: './Customer_Lookup_Master_v1.jmx'
           
       - name: Get current date
-        if: github.event.schedule != '*/11 * * * *'
+        #if: github.event.schedule != '*/11 * * * *'
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d_T%H-%M-%S')"
       - name: Test with environment variables
-        if: github.event.schedule != '*/11 * * * *'
+        #if: github.event.schedule != '*/11 * * * *'
         run: echo $TAG_NAME - $RELEASE_NAME
         env:
           TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
           RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
           
       - name: Upload Results
-        if: github.event.schedule != '*/11 * * * *'
+        #if: github.event.schedule != '*/11 * * * *'
         uses: actions/upload-artifact@v2
         with:
           name: Customer_Lookup_Master_v1_results_${{ steps.date.outputs.date }}
@@ -63,7 +63,7 @@ jobs:
       - uses: actions/checkout@v2
         
       - name: PerfAction for JMeter
-        if: github.event.schedule != '*/7 * * * *'
+        #if: github.event.schedule != '*/7 * * * *'
         # You may pin to the exact commit or the version.
         # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
         uses: QAInsights/PerfAction@2.0
@@ -72,18 +72,18 @@ jobs:
           test-plan-path: './ProductLookup_v6.jmx'
           
       - name: Get current date
-        if: github.event.schedule != '*/7 * * * *'
+        #if: github.event.schedule != '*/7 * * * *'
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d_T%H-%M-%S')"
       - name: Test with environment variables
-        if: github.event.schedule != '*/7 * * * *'
+        #if: github.event.schedule != '*/7 * * * *'
         run: echo $TAG_NAME - $RELEASE_NAME
         env:
           TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
           RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
           
       - name: Upload Results
-        if: github.event.schedule != '*/7 * * * *'
+        #if: github.event.schedule != '*/7 * * * *'
         uses: actions/upload-artifact@v2
         with:
           name: ProductLookup_v6_results_${{ steps.date.outputs.date }}
