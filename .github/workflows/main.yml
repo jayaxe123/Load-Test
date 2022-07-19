@@ -53,6 +53,7 @@ jobs:
           path: result.jtl
 
   Build2_ProductLookup_v6:
+    needs: [Build1_Customer_Lookup_Master]
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     #runs-on: self-hosted
