@@ -24,29 +24,25 @@
         <stringProp name="ThreadGroup.duration">${__P(p_duration,1800)}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="TestPlan.comments">${__P(p_vuser,1)}</stringProp>
+        <stringProp name="TestPlan.comments">${__P(p_vuser,1)}}</stringProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ProductLookup_v6" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="eligibilityFlags" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-  &quot;customerId&quot;:&quot;12232298&quot;,&#xd;
-  &quot;sourceProductIndentification&quot;:&quot;7716549&quot;,&#xd;
-  &quot;sourceSystemCode&quot;:&quot;QFUND_X&quot;&#xd;
-}</stringProp>
+                <stringProp name="Argument.value">{&quot;sourceCustomerId&quot;:&quot;3299298&quot;,&quot;correlationId&quot;:&quot;c9b355fc-0116-4101-b38e-2c3f068e6468&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">https://svcsqa1.int.advanceamerica.net/services/ProductLookup/v6/rs/productGet</stringProp>
+          <stringProp name="HTTPSampler.path">https://svcsqa1.int.advanceamerica.net/services/EligibilityFlags/v5/rs/eligibilityFlags</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -59,16 +55,20 @@
         <hashTree>
           <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
               <elementProp name="X_ConsumerName" elementType="Header">
                 <stringProp name="Header.name">X_ConsumerName</stringProp>
                 <stringProp name="Header.value">test</stringProp>
               </elementProp>
               <elementProp name="X_ConsumerTrackingId" elementType="Header">
                 <stringProp name="Header.name">X_ConsumerTrackingId</stringProp>
-                <stringProp name="Header.value">${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;Z&apos;,)}</stringProp>
+                <stringProp name="Header.value">test</stringProp>
               </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
             </collectionProp>
@@ -79,8 +79,18 @@
             <stringProp name="RandomTimer.range">1000</stringProp>
           </UniformRandomTimer>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="77576664">&quot;message&quot; : &quot;SUCCESS&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
           <boolProp name="ResultCollector.error_logging">true</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -117,7 +127,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
