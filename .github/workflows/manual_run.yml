@@ -1,4 +1,4 @@
-name: CI2
+name: CI_Adhoc_MFA_Proxy
 
 # Controls when the workflow will run
 on:
@@ -30,7 +30,7 @@ jobs:
         uses: QAInsights/PerfAction@2.0
         with:
           # jmeter test plan to execute
-          test-plan-path: './Customer_Lookup_Master_v1.jmx'
+          test-plan-path: './MFA_PRoxy_v1.jmx'
           
       - name: Get current date
         #if: github.event.schedule != '*/11 * * * *'
@@ -47,5 +47,5 @@ jobs:
         #if: github.event.schedule != '*/11 * * * *'
         uses: actions/upload-artifact@v2
         with:
-          name: Customer_Lookup_Master_v1_results_${{ steps.date.outputs.date }}
+          name: MFA_PRoxy_v1_results_${{ steps.date.outputs.date }}
           path: result.jtl
