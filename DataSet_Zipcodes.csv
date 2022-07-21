@@ -1,0 +1,101 @@
+StateCode,State,zipcode,City
+AL,Alabama,35004,Montgomery
+AL,Alabama,36925,Montgomery
+AK,Alaska,99501,Juneau
+AK,Alaska,99950,Juneau
+AZ,Arizona,85001,Phoenix
+AZ,Arizona,86556,Phoenix
+AR,Arkansas,71601,Little Rock
+AR,Arkansas,72959,Little Rock
+CA,California,90001,Sacramento
+CA,California,96162,Sacramento
+CO,Colorado,80001,Denver
+CO,Colorado,81658,Denver
+CT,Connecticut,6001,Hartford
+CT,Connecticut,6928,Hartford
+DE,Delaware,19701,Dover
+DE,Delaware,19980,Dover
+FL,Florida,32003,Tallahassee
+FL,Florida,34997,Tallahassee
+GA,Georgia,30002,Atlanta
+GA,Georgia,39901,Atlanta
+HI,Hawaii,96701,Honolulu
+HI,Hawaii,96898,Honolulu
+ID,Idaho,83201,Boise
+ID,Idaho,83877,Boise
+IL,Illinois,60001,Springfield
+IL,Illinois,62999,Springfield
+IN,Indiana,46001,Indianapolis
+IN,Indiana,47997,Indianapolis
+IA,Iowa,50001,Des Moines
+IA,Iowa,52809,Des Moines
+KS,Kansas,66002,Topeka
+KS,Kansas,67954,Topeka
+KY,Kentucky,40003,Frankfort
+KY,Kentucky,42788,Frankfort
+LA,Louisiana,71497,Baton Rouge
+LA,Louisiana,70001,Baton Rouge
+ME,Maine,3901,Augusta
+ME,Maine,4992,Augusta
+MD,Maryland,20588,Annapolis
+MD,Maryland,21930,Annapolis
+MA,Massachuset,1001,Boston
+MA,Massachuset,5544,Boston
+MI,Michigan,48001,Lansing
+MI,Michigan,49971,Lansing
+MN,Minnesota,55001,Saint Paul
+MN,Minnesota,56763,Saint Paul
+MS,Mississippi,38601,Jackson
+MS,Mississippi,39776,Jackson
+MO,Missouri,63001,Jefferson City
+MO,Missouri,65899,Jefferson City
+MT,Montana,59001,Helena
+MT,Montana,59937,Helena
+NE,Nebraska,68001,Lincoln
+NE,Nebraska,69367,Lincoln
+NV,Nevada,88901,Carson City
+NV,Nevada,89883,Carson City
+NH,NwHampshire,3031,Concord
+NH,NwHampshire,389,Concord
+NJ,New Jersey,7001,Trenton
+NJ,New Jersey,8989,Trenton
+NM,New Mexico,87001,Santa Fe
+NM,New Mexico,8843,Santa Fe
+NY,New York,501,Albany
+NY,New York,14925,Albany
+NC,N Carolina,27006,Raleigh
+NC,N Carolina,28909,Raleigh
+ND,N Dakota,58001,Bismarck
+ND,N Dakota,58856,Bismarck
+OH,Ohio,43001,Columbus
+OH,Ohio,45999,Columbus
+OK,Oklahoma,73001,Oklahoma City
+OK,Oklahoma,74966,Oklahoma City
+OR,Oregon,97001,Salem
+OR,Oregon,97920,Salem
+PA,Pennsylv,15001,Harrisburg
+PA,Pennsylv,19640,Harrisburg
+RI,Rhode Isl,2801,Providence
+RI,Rhode Isl,2940,Providence
+SC,S Carolina,29001,Columbia
+SC,S Carolina,29945,Columbia
+SD,S Dakota,57001,Pierre
+SD,S Dakota,57799,Pierre
+TN,Tennessee,37010,Nashville
+TN,Tennessee,38589,Nashville
+TX,Texas,73301,Austin
+TX,Texas,88595,Austin
+UT,Utah,84001,Salt Lake City
+UT,Utah,84791,Salt Lake City
+VT,Vermont,5001,Montpelier
+VT,Vermont,5907,Montpelier
+VA,Virginia,20101,Richmond
+VA,Virginia,24658,Richmond
+WA,Washington,98001,Olympia
+WA,Washington,99403,Olympia
+WV,West Virginia,24701,Charleston
+WV,West Virginia,26886,Charleston
+WI,Wisconsin,53001,Madison
+WI,Wisconsin,54990,Madison
+WY,Wyoming,82001,Cheyenne
+WY,Wyoming,83414,Cheyenne
