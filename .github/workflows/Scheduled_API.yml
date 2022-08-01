@@ -165,3 +165,118 @@ jobs:
         with:
           name: getProcessingDates_v1_results_${{ steps.date.outputs.date }}
           path: result.jtl
+  
+  Build5_Confirm_Product_API_V1:
+    needs: [Build3_eligibilityFlags_V1]
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        
+      - name: PerfAction for JMeter
+        #if: github.event.schedule != '*/7 * * * *'
+        # You may pin to the exact commit or the version.
+        # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
+        uses: QAInsights/PerfAction@2.0
+        with:
+          # jmeter test plan to execute
+          test-plan-path: './Confirm_Product_API_V1.jmx'
+          
+      - name: Get current date
+        #if: github.event.schedule != '*/7 * * * *'
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d_T%H-%M-%S')"
+      - name: Test with environment variables
+        #if: github.event.schedule != '*/7 * * * *'
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+          
+      - name: Upload Results
+        #if: github.event.schedule != '*/7 * * * *'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Confirm_Product_API_V1_results_${{ steps.date.outputs.date }}
+          path: result.jtl
+          
+  Build6_Staging_DealHistory:
+    needs: [Build3_eligibilityFlags_V1]
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        
+      - name: PerfAction for JMeter
+        #if: github.event.schedule != '*/7 * * * *'
+        # You may pin to the exact commit or the version.
+        # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
+        uses: QAInsights/PerfAction@2.0
+        with:
+          # jmeter test plan to execute
+          test-plan-path: './Staging_DealHistory.jmx'
+          
+      - name: Get current date
+        #if: github.event.schedule != '*/7 * * * *'
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d_T%H-%M-%S')"
+      - name: Test with environment variables
+        #if: github.event.schedule != '*/7 * * * *'
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+          
+      - name: Upload Results
+        #if: github.event.schedule != '*/7 * * * *'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Staging_DealHistory_results_${{ steps.date.outputs.date }}
+          path: result.jtl
+          
+  Build7_MFA_PRoxy_v1:
+    needs: [Build3_eligibilityFlags_V1]
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        
+      - name: PerfAction for JMeter
+        #if: github.event.schedule != '*/7 * * * *'
+        # You may pin to the exact commit or the version.
+        # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
+        uses: QAInsights/PerfAction@2.0
+        with:
+          # jmeter test plan to execute
+          test-plan-path: './MFA_PRoxy_v1.jmx'
+          
+      - name: Get current date
+        #if: github.event.schedule != '*/7 * * * *'
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d_T%H-%M-%S')"
+      - name: Test with environment variables
+        #if: github.event.schedule != '*/7 * * * *'
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+          
+      - name: Upload Results
+        #if: github.event.schedule != '*/7 * * * *'
+        uses: actions/upload-artifact@v2
+        with:
+          name: MFA_PRoxy_v1_results_${{ steps.date.outputs.date }}
+          path: result.jtl
+
